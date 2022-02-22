@@ -36,21 +36,17 @@
     kubeVersion: 호환되는 쿠버네티스 버전의 SemVer 범위 (선택)
     description: 이 프로젝트에 대한 간략한 설명 (선택)
     type: 차트 타입 (선택)
-    keywords:
-    - 이 프로젝트에 대한 키워드 리스트 (선택)
+    keywords: 이 프로젝트에 대한 키워드 리스트 (선택)
     home: 프로젝트 홈페이지의 URL (선택)
-    sources:
-    - 이 프로젝트의 소스코드 URL 리스트 (선택)
+    sources:  이 프로젝트의 소스코드 URL 리스트 (선택)
     dependencies: # 차트 필요조건들의 리스트 (optional)
     - name: 차트명 (nginx)
         version: 차트의 버전 ("1.2.3")
         repository: 저장소 URL ("https://example.com/charts") 또는 ("@repo-name")
         condition: (선택) 차트들의 활성/비활성을 결정하는 boolean 값을 만드는 yaml 경로 (예시: subchart1.enabled)
-        tags: # (선택)
-        - 활성화 / 비활성을 함께하기 위해 차트들을 그룹화 할 수 있는 태그들
+        tags: # (선택) 활성화 / 비활성을 함께하기 위해 차트들을 그룹화 할 수 있는 태그들
         enabled: (선택) 차트가 로드될수 있는지 결정하는 boolean
-        import-values: # (선택)
-        - ImportValues 는 가져올 상위 키에 대한 소스 값의 맵핑을 보유한다. 각 항목은 문자열이거나 하위 / 상위 하위 목록 항목 쌍일 수 있다.
+        import-values: # (선택) ImportValues 는 가져올 상위 키에 대한 소스 값의 맵핑을 보유한다. 각 항목은 문자열이거나 하위 / 상위 하위 목록 항목 쌍일 수 있다.
         alias: (선택) 차트에 대한 별명으로 사용된다. 같은 차트를 여러번 추가해야할때 유용하다.
     maintainers: # (선택)
     - name: maintainer들의 이름 (각 maintainer마다 필수)
