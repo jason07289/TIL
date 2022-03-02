@@ -50,9 +50,10 @@
 - 스프링 클라우드 유레카를 기반으로 구성할 수도있고 Istio 솔루션을 적용해 볼수도 있는것 같다.
 <br/><br/>
 - 출처: https://www.samsungsds.com/kr/insights/1239180_4627.html
+
 ### 스프링 클라우드 기반 유레카
 - 유레카는 단위 서비스들에 대하여 동적으로 서비스 레지스트리 및 서비스 디스커버리를 수행(EurekaClient - EurekaServer 관계)하고 서비스간 통신의 부하 분산 기능을 제공한다.
-![image](https://user-images.githubusercontent.com/38865267/155261666-994ad9c4-da23-4b74-9990-4e8f457ba3dc.png)
+    ![image](https://user-images.githubusercontent.com/38865267/155261666-994ad9c4-da23-4b74-9990-4e8f457ba3dc.png)
 
 - 애플리케이션이 시작될 때, 유레카 서버의 레지스트리에 상태 정보를 등록한다.
 - 각 서비스는 설정된 간격(기본 30초)마다 하트비트 방식으로 상태 정보를 유레카 서버로 전송해 Health check를 한다.
@@ -62,7 +63,7 @@
 ### 사이드카 프록시 패턴으로 서비스 메쉬 구현
 - 애플리케이션 서비스 앞단에 프록시를 배치하는 디자인
 - 애플리케이션을 수정하지 않고도 서비스간 통신에 해당하는 추가 기능을 수행할 수 있다.
-![image](https://user-images.githubusercontent.com/38865267/155261989-c984d89a-7210-43f8-88b6-7e4ef4b6aa08.png)
+    ![image](https://user-images.githubusercontent.com/38865267/155261989-c984d89a-7210-43f8-88b6-7e4ef4b6aa08.png)
 
 - 위 그림은 대표적인 사이드카방식의 오픈소스 구현체이며 쿠버네티스 기반의 솔루션인 이스티오(Istio)
 - Data Plain에서 Envoy가 사이드카로 배포되어 서비스의 인/아웃 통신 트래픽을 제어한다.
