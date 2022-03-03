@@ -1,4 +1,6 @@
 # Event-Driven
+- MSA가 적용된 시스템을 보완해주는 개념
+- 
 
 ## EDA(Event-Driven Architecture)
 - 분산된 시스템 간 이벤트를 생성, 발행(Publishing)하고 발행된 이벤트를 필요로하는 수신자에게 전송된다.
@@ -7,7 +9,7 @@
   - 예시:
     - IO Event: 컴퓨터 회로를 구동시키기 위해 발생하는 일
     - IOT 기기 등의 센서로 부터 유입되는 데이터 스트리밍 기반의 동작
-    - 시스템 내,외부에서 발생한 주목할 만한 상태의 변화
+    - <strong><span style="color:blue">시스템 내,외부에서 발생한 주목할 만한 상태의 변화</span><strong>
 - 주로 Event Driven 시스템은 Message Broker(Kafka, Rabbit MQ, Redis)와 결합하여 Message Driven 시스템으로 구성된다.
 
 ## EDA 구성요소
