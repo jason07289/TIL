@@ -39,3 +39,12 @@
   - @WebFluxTest
   - @DataRedisTest
 - Quartz(오픈소스 스케쥴링 라이브러리) 스케쥴러 전용 starter 지원
+
+## Spring 6.X (Spring boot 3.0.0~, 21년도 8월, 현재 로드맵만 나온상황?)
+- JDK 17+
+- jakarta EE 9 APIs migrate(호환성을 위해 Tomcat 10/Jetty 11 필요)
+- jakarta.persistence(최대 절전 모드 ORM 6?).
+- XML 구성 형식은 이제 과거형일 것이다.
+- RPC 지원기간이 지난다.
+- 일부 Java EE API 기한이 지난다.
+- 클라우드의 길을 완전하게 열것이다...

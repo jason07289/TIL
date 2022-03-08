@@ -17,3 +17,7 @@
   - 텍스트 블록 (자바15) : 여러줄에 걸쳐서 작성해야 하는 문자열을 정의할 때 매우 편리하다. SQL 문장이나 XML 문장등을 작성할 때 유용하다.
   - 스위치 표현 (자바14) : 스위치 구문(switch statements)이 아닌 스위치 표현(switch expressions)이다. 스위치 문장에서 -> 를 이용해서 경우의 수를 쉽고 다양하게 정의할 수 있다.
 - 기본 레거시 랜덤(java.util.Random) 클래스를 확장, 리팩토링한 RandomGenerator 난수 생성 API가 추가
+
+### 참고 사항
+- 자바 Support Roadmap
+    ![image](https://user-images.githubusercontent.com/38865267/157151705-91b72890-5b23-41fc-89d2-6d85a3ae9dd0.png)
