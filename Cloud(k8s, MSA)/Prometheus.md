@@ -54,3 +54,7 @@
   - 대표적으로 heap 메모리 사용률, gc 수행 시간 및 실행 수, thread 수와 같은 metric
 - 부가적으로 Spring-boot의 thrid-party 라이브러리에 관해서도 수집이 가능하다.
   - ex) kafka, hystrix, hicaricp, rabbitmq, cache
+
+
+- jmx-exporter 관련 참고 글: https://ooeunz.tistory.com/145
+  
