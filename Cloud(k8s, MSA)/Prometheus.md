@@ -32,3 +32,25 @@
   - Grouping: 여러가지 문제에 대해 하나의 알림으로 보낼 수 있다.
   - Inhibition: 알림이 너무 많이 갈 경우 조건을 주어 추가 알림이 가지 않도록 설정 가능.
   - Silences: matcher로 조건을 주어서 일정 시간 동안 알림을 멈출 수 있음
+
+### Actuator (jmx-exporter) 
+- JVM에서 발생하는 메트릭을 수집하는 Exporter
+- 외장 jmx-exporter와 java agent를 사용하는 두 가지 방법이 있음
+- Actuator는 Spring boot에서 maven 또는 gradle로 dependency 추가가 가능하다.
+  ```xml
+        <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+        </dependency>
+    </dependencies>
+  ```
+- jmx-exporter는 기본적으로 tomcat의 8999 port를 이용해서 metric을 export시킨다.
+- jmx-exporter를 사용하면 기본적으로 jvm안에서 발생하는 metric을 수집힌다.
+  - 대표적으로 heap 메모리 사용률, gc 수행 시간 및 실행 수, thread 수와 같은 metric
+- 부가적으로 Spring-boot의 thrid-party 라이브러리에 관해서도 수집이 가능하다.
+  - ex) kafka, hystrix, hicaricp, rabbitmq, cache
