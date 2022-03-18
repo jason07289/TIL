@@ -4,6 +4,14 @@
 - Istio는 Envoy를 Data Plane으로 사용하고 이를 Control해준다.
 - k8s 환경의 Service Mesh 관리에서 사장 많이 사용된다.
 
+## Istion 구성요소
+- 컨트롤 플레인
+  - Pilot: Envoy에 구성정보를 넘겨주고 서비스 디스커버리, 등록 및 부하 분산을 담당
+  - Mixer: 각 구성 요소로부터 메트릭을 모으는 역할(Telmetry), 네트워크 관련 정책 집행(Policy Check)
+  - Citadel: 보안 담당 - mTLS, Authentication
+  - Gallery: 플랫폼(ex. k8s)의 구성 정보를 받아들이고 검증 및 실행 담당
+- 데이터 플레인
+  - Envoy: Sidecar Proxy로 마이크로 서비스 간의 모든 네트워크 통신을 중재 및 제어, 모든 메시 트래픽에 대한 측정값 수집 및 보고
 ## 기능
 1. 트래픽 통제
    - 트래픽 분할
@@ -53,7 +61,7 @@
     ![image](https://user-images.githubusercontent.com/38865267/155080154-a06eb4b9-3b89-426f-8781-e5c5fad5f7fb.png)
     - Aware? 알고 있다... 각 서비스들이 mesh의 존재를 알고 있다. 그래서 hystrix 같은 것도 코드 내에서 구현했던거 같음
 
-### 서비스 매쉬
+### 서비스 메쉬
 - 각 서비스에 프록시를 넣는다.
 - 서비스로 들어오거나 나가는 트래픽을 네트워크 단에서 모두 통제한다.
     ex) 써킷 브레이커 역할도 가능
