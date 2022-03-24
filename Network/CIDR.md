@@ -15,3 +15,15 @@
     ```
 - Ipv4 Packet
   ![image](https://user-images.githubusercontent.com/38865267/159824439-18436801-f1ab-4bdb-bd19-ebc98f4a2bcd.png)
+
+- IP header 부분에서 ip 주소를 차지하고 있는 Source address와 destination address가 각각 32bit, 즉 4 바이트씩 할당되어 있다.
+
+## CIDR 블록
+```
+    A.B.C.D/N
+```
+- CIDR 블록은 A.B.C.D/N과 같은 형태를 띠고 있다.
+- IPv4 주소와 마찬가지로 4개의 8비트 단위 바이트로 이루어진 32비트 이진수
+- /뒤에 N은 prefix 길이이며 주소의 왼쪽으로부터 비트의 수를 가리키고 있다.
+- IPv4는 주소의 길이가 32비트이기에 N비트의 CIDR prefix는 32-N 비트의 나머지를 남기며, 남은 비트로 만들 수 있는 경우의 수는 2^(32-N)이다. 짧은 CIDR prefix는 더 많은 IP 주소를 가지게 되며, 긴 CIDR prefix는 더 적은 IP 주소를 가지게 된다.
+- CIDR는 IPv6주소에서도 사용이 가능하다.
