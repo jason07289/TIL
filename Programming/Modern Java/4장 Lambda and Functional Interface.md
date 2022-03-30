@@ -73,3 +73,4 @@
     ```
     Thread thread = new Thread( () -> System.out.println("1") );
     ```
+- 먼저 익명 클래스를 만들고 위 절차를 거쳐 람다표현식으로 변경하는 연습이 필요하다.
