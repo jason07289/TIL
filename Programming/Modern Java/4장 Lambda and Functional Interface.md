@@ -1,0 +1,75 @@
+# Lambda and Functional Interface
+- 람다 표현식은 함축적이고 간결한 표현이 가능하다.
+- 이 기술을 기반으로 다른 혁신적인 기술인 함수형 프로그래밍과 스트림 처리가 가능해진다.
+
+## 함수형 인터페이스에서 익명클래스와 람다표현식 예시
+- Comparator
+  - list에서 객체를 정렬하는 sort 메서드에 Comparator 인터페이스를 파라미터로 받게 정의되어 있다.
+  - 여기서 정렬에 대한 기준은 객체마다 다양하기 때문에 활용도가 높도록 함수형 인터페이스를 사용한다.
+  - Comparator를 사용하기 위한 compareTo 메서드를 다음과 같은 형태로 구현이 가능하다.
+    ```java
+    public class Test {
+        public static void main(String[] args) {
+            List<CompareOBJ> list = new ArrayList<CompareOBJ>();
+            
+            //익명클래스
+            list.sort(new Comparator<CompareOBJ>() {
+                @Override
+                public int compare(CompareOBJ o1, CompareOBJ o2) {
+                    return o1.a - o2.a;
+                }
+            });
+            
+            //람다표현식
+            list.sort( (CompareOBJ o1, CompareOBJ o2) -> o1.a - o2.a);
+        }
+    }
+    ```
+- 위 예시를 보면 익명 클래스에 비해서 람다 표현식의 상당히 많은 부분이 축약되고 생략된 것을 확인할 수 있다.
+- 람다 표현식으로 변경하기 전 메서드를 구성하는 4가지 요소 생각해보기 (메서드의 필수 규격)
+  1. 메서드의 이름
+  2. 메서드에 전달되는 파라미터 목록
+  3. 메서드를 구현한 본문
+  4. 메서드의 리턴 타입
+- 람다표현식에서는 가장 중요한 2,3 번만을 작성하고 1,4번을 과감하게 생략한 코딩이 가능하다.
+
+## 함수형 프로그래밍의 필요성
+- 이름없는 함수를 선언할 수 있다. 메서드는 반드시 특정 클래스나 인터페이스 안에 포함되어야 하고 메서드의 이름이 있어야 하지만, 람다 표현식은 이러한 제약에서 벗어날 수 있다.
+- 프로그래밍 시 제약조건이 완화되어 유연성이 생긴다.
+- 소스코드의 분량을 획기적으로 줄일 수 있다.
+- 코드를 파라미터로 전달할 수 있다. 외부에서 동작을 정의해서 메서드에 전달할 때 편리하게 사용할 수 있다.
+
+## 단계별 람다 표현식 전환 (Runnable 인터페이스)
+- 기존 익명 클래스 코드
+    ``` 
+    Thread thread = new Thread(new Runnable() {
+
+        @Override
+        public void run() {
+            System.out.println("1");				
+        }		
+    });
+    ```
+- Thread 생성자의 인수는 Runnable 인터페이스가 유일하다. 그러므로 인터페이스명을 다시 선언할 필요가 없다.
+    ```
+    Thread thread = new Thread(
+
+        @Override
+        public void run() {
+            System.out.println("1");			
+        }		
+    );
+    ```
+- 그 다음 메서드명과 리턴타입을 제거한다. 함수형인터페이스에서 이 두가지는 이미 정해져있으므로 생략이 가능하다.
+    ```
+    Thread thread = new Thread(
+
+        (){
+            System.out.println("1");			
+        }		
+    );
+    ```
+- 이제 람다 문법으로의 변경이 필요하다. 람다에서는 파라미터 목록을 메서드의 본문으로 전달한다는 의미로 `->` 기호를 사용한다.
+    ```
+    Thread thread = new Thread( () -> System.out.println("1") );
+    ```
